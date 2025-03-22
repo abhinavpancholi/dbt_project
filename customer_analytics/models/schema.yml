@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: customer_details
-    description: "This model contains customer details for the insurance company, built in the customer_analytics project."
+    description: "This model holds customer information for the insurance company, built in the customer_analytics project."
     columns:
       - name: customer_id
         description: "Unique identifier for each customer."
@@ -10,6 +10,18 @@ models:
           - unique
           - not_null
       - name: customer_name
-        description: "The full name of the customer."
+        description: "Full name of the customer."
       - name: customer_email
         description: "The email address of the customer."
+
+  - name: customer_claims
+    description: "This model joins customer details with claims data from the claims_analytics project."
+    columns:
+      - name: customer_id
+        description: "The customer identifier."
+      - name: claim_id
+        description: "The unique claim identifier."
+      - name: claim_date
+        description: "The date of the claim."
+      - name: claim_description
+        description: "Description of the claim."

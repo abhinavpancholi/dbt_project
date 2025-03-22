@@ -2,8 +2,7 @@ name: 'risk_management'
 version: '1.0.0'
 config-version: 2
 
-# Reference the shared profile defined in your global profiles.yml
-profile: 'risk_management'
+profile: my_dbt_projects
 
 # Specify where dbt should look for models and other resources
 model-paths: ["models"]

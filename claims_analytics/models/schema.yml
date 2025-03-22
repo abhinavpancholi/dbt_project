@@ -9,7 +9,19 @@ models:
         tests:
           - unique
           - not_null
+      - name: customer_id
+        description: "Foreign key referencing the customer in customer_analytics."
+        tests:
+          - not_null
       - name: claim_description
         description: "A brief description of the claim."
       - name: claim_date
         description: "The date when the claim was submitted."
+
+  - name: claims_summary
+    description: "A summary view of claims data, including total claims count."
+    columns:
+      - name: claim_id
+        description: "The unique claim identifier."
+      - name: total_claims
+        description: "Total number of claims in the dataset."

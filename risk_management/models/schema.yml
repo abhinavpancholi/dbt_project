@@ -12,4 +12,14 @@ models:
       - name: risk_score
         description: "Calculated risk score for the policy."
       - name: underwriting_decision
-        description: "The underwriting decision based on risk assessment."
+        description: "Underwriting decision based on risk assessment."
+
+  - name: risk_by_claim
+    description: "This model joins claims data (from claims_analytics) with risk management data to provide risk insights per claim."
+    columns:
+      - name: claim_id
+        description: "The unique claim identifier."
+      - name: risk_score
+        description: "Risk score associated with the claim."
+      - name: underwriting_decision
+        description: "Underwriting decision for the claim."
