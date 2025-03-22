@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: unified_claims
+    description: "This model pulls claims data from the claims_analytics project into the unified schema."
+    columns:
+      - name: claim_id
+        description: "A unique identifier for each claim."
+      - name: customer_id
+        description: "Foreign key referencing the customer; comes from claims_analytics."
+      - name: claim_date
+        description: "The date when the claim was submitted."
+      - name: claim_description
+        description: "A brief description of the claim."
+
+  - name: unified_customers
+    description: "This model retrieves customer details from the customer_analytics project into the unified schema."
+    columns:
+      - name: customer_id
+        description: "A unique identifier for each customer."
+      - name: customer_name
+        description: "The full name of the customer."
+      - name: customer_email
+        description: "The email address of the customer."
+
+  - name: unified_lineage
+    description: "This model joins data from claims, customer details, and risk management to illustrate cross-project lineage."
+    columns:
+      - name: claim_id
+        description: "The unique identifier for each claim."
+      - name: claim_date
+        description: "The date when the claim was submitted."
+      - name: customer_id
+        description: "Customer identifier linking to unified_customers."
+      - name: customer_name
+        description: "Name of the customer."
+      - name: risk_score
+        description: "Risk score from risk management data."
+      - name: underwriting_decision
+        description: "Underwriting decision from risk management data."

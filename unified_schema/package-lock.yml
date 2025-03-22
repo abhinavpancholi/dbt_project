@@ -1,0 +1,5 @@
+packages:
+  - local: ../claims_analytics
+  - local: ../risk_management
+  - local: ../customer_analytics
+sha1_hash: 91b19d8beb92e6c2a7d97b8e76e991a1eed74a19

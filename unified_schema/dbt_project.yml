@@ -1,0 +1,36 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'unified_schema'
+version: '1.0.0'
+config-version: 2
+
+# Use the shared profile you already have
+profile: my_dbt_projects
+
+# Set where your models are located
+model-paths: ["models"]
+
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In this example config, we tell dbt to build all models in the example/
+# directory as views. These settings can be overridden in the individual model
+# files using the `{{ config(...) }}` macro.
+models:
+  unified_schema:
+    # Config indicated by + and applies to all files under models/example/
+    example:
+      +materialized: view

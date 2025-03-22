@@ -1,0 +1,4 @@
+packages:
+  - local: ../claims_analytics
+  - local: ../risk_management
+  - local: ../customer_analytics
