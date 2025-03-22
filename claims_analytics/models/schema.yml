@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: claims
+    description: "This model contains claims data for the insurance company, built in the claims_analytics project."
+    columns:
+      - name: claim_id
+        description: "A unique identifier for each claim."
+        tests:
+          - unique
+          - not_null
+      - name: claim_description
+        description: "A brief description of the claim."
+      - name: claim_date
+        description: "The date when the claim was submitted."

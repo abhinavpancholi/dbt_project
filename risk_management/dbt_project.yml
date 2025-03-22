@@ -1,0 +1,23 @@
+name: 'risk_management'
+version: '1.0.0'
+config-version: 2
+
+# Reference the shared profile defined in your global profiles.yml
+profile: 'risk_management'
+
+# Specify where dbt should look for models and other resources
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configure models (example configuration for models in risk_management)
+models:
+  risk_management:
+    +materialized: table

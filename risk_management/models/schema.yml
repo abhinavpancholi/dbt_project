@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: risk_management_model
+    description: "This model contains risk management data, including risk scores and underwriting decisions."
+    columns:
+      - name: policy_id
+        description: "Unique identifier for each policy."
+        tests:
+          - unique
+          - not_null
+      - name: risk_score
+        description: "Calculated risk score for the policy."
+      - name: underwriting_decision
+        description: "The underwriting decision based on risk assessment."
